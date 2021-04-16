@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import "./container.scss";
+
+import Card from "../card/Card";
+
+//assets
 import beer from "../../assets/Icons/Beer.png";
 import burger from "../../assets/Icons/Burger.png";
 import cereal from "../../assets/Icons/Cereal.png";
@@ -7,8 +12,7 @@ import hotdog from "../../assets/Icons/Hotdog.png";
 import meat from "../../assets/Icons/Meat.png";
 import pizza from "../../assets/Icons/Pizza.png";
 import sandwich from "../../assets/Icons/Sandwich.png";
-import { useState } from "react";
-import "./container.scss";
+
 const Container = () => {
   const initCategories = [
     {
@@ -59,7 +63,7 @@ const Container = () => {
       <section className="top">Categories</section>
       <section className="bottom">
         {categories.map((category) => {
-          return <div>{category.name}</div>;
+          return <Card category={category} />;
         })}
       </section>
     </div>
